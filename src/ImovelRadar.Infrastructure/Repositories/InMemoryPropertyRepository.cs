@@ -54,7 +54,8 @@ public class InMemoryPropertyRepository : IPropertyRepository
     {
         ArgumentNullException.ThrowIfNull(request);
 
-        IEnumerable<Property> query = _properties;
+        IEnumerable<Property> query =
+            _properties;
 
         if (!string.IsNullOrWhiteSpace(request.City))
         {
@@ -84,33 +85,38 @@ public class InMemoryPropertyRepository : IPropertyRepository
         if (request.Bedrooms.HasValue)
         {
             query = query.Where(property =>
-                property.Bedrooms == request.Bedrooms.Value);
+                property.Bedrooms ==
+                request.Bedrooms.Value);
         }
 
         if (request.MinPrice.HasValue)
         {
             query = query.Where(property =>
-                property.Price >= request.MinPrice.Value);
+                property.Price >=
+                request.MinPrice.Value);
         }
 
         if (request.MaxPrice.HasValue)
         {
             query = query.Where(property =>
-                property.Price <= request.MaxPrice.Value);
+                property.Price <=
+                request.MaxPrice.Value);
         }
 
         if (request.MinArea.HasValue)
         {
             query = query.Where(property =>
                 property.Area.HasValue &&
-                property.Area.Value >= request.MinArea.Value);
+                property.Area.Value >=
+                request.MinArea.Value);
         }
 
         if (request.MaxArea.HasValue)
         {
             query = query.Where(property =>
                 property.Area.HasValue &&
-                property.Area.Value <= request.MaxArea.Value);
+                property.Area.Value <=
+                request.MaxArea.Value);
         }
 
         IReadOnlyList<Property> result =
@@ -125,22 +131,66 @@ public class InMemoryPropertyRepository : IPropertyRepository
     {
         var property =
             _properties.FirstOrDefault(
-                property => property.Id == id);
+                property =>
+                    property.Id == id);
 
         return Task.FromResult(property);
     }
 
-    public Task<IReadOnlyList<Property>> GetComparablePropertiesAsync(
-        Property property,
+    public Task<Property?> GetBySourceAndExternalIdAsync(
+        int sourceId,
+        string externalId,
         CancellationToken cancellationToken = default)
+    {
+        var property =
+            _properties.FirstOrDefault(
+                property =>
+                    property.SourceId == sourceId &&
+                    string.Equals(
+                        property.ExternalId,
+                        externalId,
+                        StringComparison.OrdinalIgnoreCase));
+
+        return Task.FromResult(property);
+    }
+
+    public Task<IReadOnlyList<Property>>
+        GetComparablePropertiesAsync(
+            Property property,
+            CancellationToken cancellationToken = default)
     {
         IReadOnlyList<Property> properties =
             _properties
                 .Where(candidate =>
-                    !ReferenceEquals(candidate, property))
+                    !ReferenceEquals(
+                        candidate,
+                        property))
                 .ToList();
 
         return Task.FromResult(properties);
+    }
+
+    public Task AddAsync(
+        Property property,
+        CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(property);
+
+        if (property.Id == 0)
+        {
+            var nextId =
+                _properties.Count == 0
+                    ? 1
+                    : _properties.Max(
+                        existingProperty =>
+                            existingProperty.Id) + 1;
+
+            property.AssignId(nextId);
+        }
+
+        _properties.Add(property);
+
+        return Task.CompletedTask;
     }
 
     public Task UpdateAsync(
@@ -158,19 +208,22 @@ public class InMemoryPropertyRepository : IPropertyRepository
         decimal area,
         string neighborhood)
     {
-        var property = new Property(
-            title: "Apartamento em São Paulo",
-            propertyType: PropertyType.Apartment,
-            transactionType: TransactionType.Sale,
-            price: price,
-            area: area,
-            bedrooms: 2,
-            bathrooms: 2,
-            parkingSpaces: 1,
-            city: "São Paulo",
-            state: "SP",
-            sourceId: 1,
-            neighborhood: neighborhood);
+        var property =
+            new Property(
+                title: "Apartamento em São Paulo",
+                propertyType:
+                    PropertyType.Apartment,
+                transactionType:
+                    TransactionType.Sale,
+                price: price,
+                area: area,
+                bedrooms: 2,
+                bathrooms: 2,
+                parkingSpaces: 1,
+                city: "São Paulo",
+                state: "SP",
+                sourceId: 1,
+                neighborhood: neighborhood);
 
         property.AssignId(id);
 

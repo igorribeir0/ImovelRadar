@@ -16,7 +16,16 @@ public interface IPropertyRepository
         int id,
         CancellationToken cancellationToken = default);
 
+    Task<Property?> GetBySourceAndExternalIdAsync(
+        int sourceId,
+        string externalId,
+        CancellationToken cancellationToken = default);
+
     Task<IReadOnlyList<Property>> GetComparablePropertiesAsync(
+        Property property,
+        CancellationToken cancellationToken = default);
+
+    Task AddAsync(
         Property property,
         CancellationToken cancellationToken = default);
 

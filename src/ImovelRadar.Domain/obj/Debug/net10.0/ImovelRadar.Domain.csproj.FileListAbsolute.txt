@@ -9,3 +9,4 @@ C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Domain\obj\Debug\net10.0\
 C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Domain\obj\Debug\net10.0\refint\ImovelRadar.Domain.dll
 C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Domain\obj\Debug\net10.0\ImovelRadar.Domain.pdb
 C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Domain\obj\Debug\net10.0\ref\ImovelRadar.Domain.dll
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Domain\obj\Debug\net10.0\ImovelRadar.Domain.sourcelink.json

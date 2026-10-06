@@ -126,6 +126,22 @@ private class FakePropertyRepository : IPropertyRepository
     public Property? Property { get; set; }
     public bool UpdateCalled { get; private set; }
 
+    public Task<Property?> GetBySourceAndExternalIdAsync(
+    int sourceId,
+    string externalId,
+    CancellationToken cancellationToken = default)
+{
+    return Task.FromResult<Property?>(
+        null);
+}
+
+public Task AddAsync(
+    Property property,
+    CancellationToken cancellationToken = default)
+{
+    return Task.CompletedTask;
+}
+
     public Task<IReadOnlyList<Property>> SearchAsync(
         PropertySearchRequest request,
         CancellationToken cancellationToken = default)
@@ -165,6 +181,8 @@ private class FakePropertyRepository : IPropertyRepository
 
         return Task.FromResult(properties);
     }
+
+
 
     public Task UpdateAsync(
         Property property,

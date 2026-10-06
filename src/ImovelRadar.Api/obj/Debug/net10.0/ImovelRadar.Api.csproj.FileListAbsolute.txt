@@ -37,3 +37,4 @@ C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Api\obj\Debug\net10.0\Imo
 C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Api\obj\Debug\net10.0\ref\ImovelRadar.Api.dll
 C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Api\bin\Debug\net10.0\ImovelRadar.Infrastructure.dll
 C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Api\bin\Debug\net10.0\ImovelRadar.Infrastructure.pdb
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Api\obj\Debug\net10.0\ImovelRadar.Api.sourcelink.json

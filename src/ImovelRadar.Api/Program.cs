@@ -39,6 +39,10 @@ builder.Services.AddSingleton<
     IPropertyPriceHistoryRepository,
     InMemoryPropertyPriceHistoryRepository>();
 
+builder.Services.AddSingleton<
+    ISourceRepository,
+    InMemorySourceRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

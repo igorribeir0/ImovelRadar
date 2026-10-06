@@ -98,3 +98,4 @@ C:\Users\POLO\Desktop\Igor\ImovelRadar\tests\ImovelRadar.Domain.Tests\obj\Debug\
 C:\Users\POLO\Desktop\Igor\ImovelRadar\tests\ImovelRadar.Domain.Tests\obj\Debug\net10.0\ImovelRadar.Domain.Tests.pdb
 C:\Users\POLO\Desktop\Igor\ImovelRadar\tests\ImovelRadar.Domain.Tests\obj\Debug\net10.0\ImovelRadar.Domain.Tests.genruntimeconfig.cache
 C:\Users\POLO\Desktop\Igor\ImovelRadar\tests\ImovelRadar.Domain.Tests\obj\Debug\net10.0\ref\ImovelRadar.Domain.Tests.dll
+C:\Users\POLO\Desktop\Igor\ImovelRadar\tests\ImovelRadar.Domain.Tests\obj\Debug\net10.0\ImovelRadar.Domain.Tests.sourcelink.json

@@ -221,6 +221,22 @@ public class PropertyAnalysisServiceTests
         return Task.FromResult(properties);
     }
 
+    public Task<Property?> GetBySourceAndExternalIdAsync(
+    int sourceId,
+    string externalId,
+    CancellationToken cancellationToken = default)
+{
+    return Task.FromResult<Property?>(
+        null);
+}
+
+public Task AddAsync(
+    Property property,
+    CancellationToken cancellationToken = default)
+{
+    return Task.CompletedTask;
+}
+
     public Task<IReadOnlyList<Property>> GetAllAsync(
         CancellationToken cancellationToken = default)
     {

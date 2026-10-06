@@ -8,5 +8,6 @@
   <Folder Name="/tests/">
     <Project Path="tests/ImovelRadar.Application.Tests/ImovelRadar.Application.Tests.csproj" />
     <Project Path="tests/ImovelRadar.Domain.Tests/ImovelRadar.Domain.Tests.csproj" />
+    <Project Path="tests/ImovelRadar.Infrastructure.Tests/ImovelRadar.Infrastructure.Tests.csproj" />
   </Folder>
 </Solution>

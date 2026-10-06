@@ -13,3 +13,4 @@ C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Application\obj\Debug\net
 C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Application\obj\Debug\net10.0\refint\ImovelRadar.Application.dll
 C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Application\obj\Debug\net10.0\ImovelRadar.Application.pdb
 C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Application\obj\Debug\net10.0\ref\ImovelRadar.Application.dll
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Application\obj\Debug\net10.0\ImovelRadar.Application.sourcelink.json

@@ -558,6 +558,22 @@ public class OpportunityRankingServiceTests
                 _properties);
         }
 
+        public Task<Property?> GetBySourceAndExternalIdAsync(
+    int sourceId,
+    string externalId,
+    CancellationToken cancellationToken = default)
+{
+    return Task.FromResult<Property?>(
+        null);
+}
+
+public Task AddAsync(
+    Property property,
+    CancellationToken cancellationToken = default)
+{
+    return Task.CompletedTask;
+}
+
         public Task<IReadOnlyList<Property>> SearchAsync(
             PropertySearchRequest request,
             CancellationToken cancellationToken = default)

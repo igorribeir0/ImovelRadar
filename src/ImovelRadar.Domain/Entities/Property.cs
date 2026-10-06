@@ -5,72 +5,86 @@ namespace ImovelRadar.Domain.Entities;
 public class Property
 {
     public Property(
-    string? title,
-    PropertyType propertyType,
-    TransactionType transactionType,
-    decimal price,
-    decimal? area,
-    int? bedrooms,
-    int? bathrooms,
-    int? parkingSpaces,
-    string city,
-    string state,
-    int sourceId,
-    string? neighborhood = null,
-    string? externalId = null,
-    string? sourceUrl = null)
-{
-    if (price <= 0)
-        throw new ArgumentOutOfRangeException(
-            nameof(price),
-            "O preço do imóvel deve ser maior que zero.");
+        string? title,
+        PropertyType propertyType,
+        TransactionType transactionType,
+        decimal price,
+        decimal? area,
+        int? bedrooms,
+        int? bathrooms,
+        int? parkingSpaces,
+        string city,
+        string state,
+        int sourceId,
+        string? neighborhood = null,
+        string? externalId = null,
+        string? sourceUrl = null)
+    {
+        if (price <= 0)
+        {
+            throw new ArgumentOutOfRangeException(
+                nameof(price),
+                "O preço do imóvel deve ser maior que zero.");
+        }
 
-    if (area is <= 0)
-        throw new ArgumentOutOfRangeException(
-            nameof(area),
-            "A área do imóvel deve ser maior que zero.");
+        if (area is <= 0)
+        {
+            throw new ArgumentOutOfRangeException(
+                nameof(area),
+                "A área do imóvel deve ser maior que zero.");
+        }
 
-    if (string.IsNullOrWhiteSpace(city))
-        throw new ArgumentException(
-            "A cidade é obrigatória.",
-            nameof(city));
+        if (string.IsNullOrWhiteSpace(city))
+        {
+            throw new ArgumentException(
+                "A cidade é obrigatória.",
+                nameof(city));
+        }
 
-    if (string.IsNullOrWhiteSpace(state))
-        throw new ArgumentException(
-            "O estado é obrigatório.",
-            nameof(state));
+        if (string.IsNullOrWhiteSpace(state))
+        {
+            throw new ArgumentException(
+                "O estado é obrigatório.",
+                nameof(state));
+        }
 
-    if (sourceId <= 0)
-        throw new ArgumentOutOfRangeException(
-            nameof(sourceId),
-            "A origem do imóvel é obrigatória.");
+        if (sourceId <= 0)
+        {
+            throw new ArgumentOutOfRangeException(
+                nameof(sourceId),
+                "A origem do imóvel é obrigatória.");
+        }
 
-    Title = title;
-    PropertyType = propertyType;
-    TransactionType = transactionType;
-    Price = price;
-    Area = area;
-    Bedrooms = bedrooms;
-    Bathrooms = bathrooms;
-    ParkingSpaces = parkingSpaces;
-    City = city.Trim();
-    State = state.Trim();
-    SourceId = sourceId;
+        Title = title;
+        PropertyType = propertyType;
+        TransactionType = transactionType;
+        Price = price;
+        Area = area;
+        Bedrooms = bedrooms;
+        Bathrooms = bathrooms;
+        ParkingSpaces = parkingSpaces;
+        City = city.Trim();
+        State = state.Trim();
+        SourceId = sourceId;
 
-    Neighborhood = string.IsNullOrWhiteSpace(neighborhood)
-    ? null
-    : neighborhood.Trim();
+        Neighborhood =
+            string.IsNullOrWhiteSpace(neighborhood)
+                ? null
+                : neighborhood.Trim();
 
-    ExternalId = externalId;
-    SourceUrl = sourceUrl;
+        ExternalId = externalId;
+        SourceUrl = sourceUrl;
 
-    var now = DateTime.UtcNow;
+        ObservationStatus =
+            PropertyObservationStatus.Active;
 
-    FirstSeenAt = now;
-    LastSeenAt = now;
-    CreatedAt = now;
-    UpdatedAt = now;
-}
+        var now = DateTime.UtcNow;
+
+        FirstSeenAt = now;
+        LastSeenAt = now;
+        CreatedAt = now;
+        UpdatedAt = now;
+    }
 
     public int Id { get; private set; }
 
@@ -110,6 +124,12 @@ public class Property
 
     public int SourceId { get; private set; }
 
+    public PropertyObservationStatus ObservationStatus
+    {
+        get;
+        private set;
+    }
+
     public string? ExternalId { get; private set; }
 
     public string? SourceUrl { get; private set; }
@@ -122,46 +142,105 @@ public class Property
 
     public DateTime UpdatedAt { get; private set; }
 
-
-public decimal? GetPricePerSquareMeter()
-{
-    if (Area is null || Area <= 0)
-        return null;
-
-    return Price / Area.Value;
-}
-
-
-public void UpdatePrice(decimal newPrice)
-{
-    if (newPrice <= 0)
-        throw new ArgumentOutOfRangeException(
-            nameof(newPrice),
-            "O novo preço do imóvel deve ser maior que zero.");
-
-    if (newPrice == Price)
-        return;
-
-    Price = newPrice;
-    UpdatedAt = DateTime.UtcNow;
-}
-
-public void AssignId(int id)
-{
-    if (id <= 0)
+    public decimal? GetPricePerSquareMeter()
     {
-        throw new ArgumentOutOfRangeException(
-            nameof(id),
-            "O identificador do imóvel deve ser maior que zero.");
+        if (Area is null || Area <= 0)
+        {
+            return null;
+        }
+
+        return Price / Area.Value;
     }
 
-    if (Id != 0)
+    public void MarkAsSeen(
+        DateTime seenAt)
     {
-        throw new InvalidOperationException(
-            "O imóvel já possui um identificador.");
+        if (seenAt < FirstSeenAt)
+        {
+            throw new ArgumentOutOfRangeException(
+                nameof(seenAt),
+                "A data da última visualização não pode ser anterior à primeira visualização.");
+        }
+
+        if (seenAt < LastSeenAt)
+        {
+            throw new ArgumentOutOfRangeException(
+                nameof(seenAt),
+                "A data da última visualização não pode retroceder.");
+        }
+
+        LastSeenAt = seenAt;
     }
 
-    Id = id;
-}
+    public void MarkAsNotObserved()
+    {
+        if (ObservationStatus ==
+            PropertyObservationStatus.NotObserved)
+        {
+            return;
+        }
 
+        ObservationStatus =
+            PropertyObservationStatus.NotObserved;
+
+        UpdatedAt =
+            DateTime.UtcNow;
+    }
+
+    public void MarkAsObserved(
+        DateTime seenAt)
+    {
+        MarkAsSeen(
+            seenAt);
+
+        if (ObservationStatus ==
+            PropertyObservationStatus.Active)
+        {
+            return;
+        }
+
+        ObservationStatus =
+            PropertyObservationStatus.Active;
+
+        UpdatedAt =
+            DateTime.UtcNow;
+    }
+
+    public void UpdatePrice(
+        decimal newPrice)
+    {
+        if (newPrice <= 0)
+        {
+            throw new ArgumentOutOfRangeException(
+                nameof(newPrice),
+                "O novo preço do imóvel deve ser maior que zero.");
+        }
+
+        if (newPrice == Price)
+        {
+            return;
+        }
+
+        Price = newPrice;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void AssignId(
+        int id)
+    {
+        if (id <= 0)
+        {
+            throw new ArgumentOutOfRangeException(
+                nameof(id),
+                "O identificador do imóvel deve ser maior que zero.");
+        }
+
+        if (Id != 0)
+        {
+            throw new InvalidOperationException(
+                "O imóvel já possui um identificador.");
+        }
+
+        Id = id;
+    }
 }
