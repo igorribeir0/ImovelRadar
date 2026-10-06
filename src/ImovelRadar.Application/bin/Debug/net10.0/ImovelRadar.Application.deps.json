@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "ImovelRadar.Application/1.0.0": {
+        "dependencies": {
+          "ImovelRadar.Domain": "1.0.0"
+        },
+        "runtime": {
+          "ImovelRadar.Application.dll": {}
+        }
+      },
+      "ImovelRadar.Domain/1.0.0": {
+        "runtime": {
+          "ImovelRadar.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ImovelRadar.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ImovelRadar.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ImovelRadar.Api/ImovelRadar.Api.csproj" />
+    <Project Path="src/ImovelRadar.Application/ImovelRadar.Application.csproj" />
+    <Project Path="src/ImovelRadar.Domain/ImovelRadar.Domain.csproj" />
+    <Project Path="src/ImovelRadar.Infrastructure/ImovelRadar.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ImovelRadar.Application.Tests/ImovelRadar.Application.Tests.csproj" />
+    <Project Path="tests/ImovelRadar.Domain.Tests/ImovelRadar.Domain.Tests.csproj" />
+  </Folder>
+</Solution>

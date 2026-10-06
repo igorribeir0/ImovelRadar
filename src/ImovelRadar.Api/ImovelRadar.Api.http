@@ -1,0 +1,6 @@
+@ImovelRadar.Api_HostAddress = http://localhost:5199
+
+GET {{ImovelRadar.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

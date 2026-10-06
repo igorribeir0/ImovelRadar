@@ -1,0 +1,17 @@
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Infrastructure\bin\Debug\net10.0\ImovelRadar.Infrastructure.deps.json
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Infrastructure\bin\Debug\net10.0\ImovelRadar.Infrastructure.dll
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Infrastructure\bin\Debug\net10.0\ImovelRadar.Infrastructure.pdb
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Infrastructure\bin\Debug\net10.0\ImovelRadar.Application.dll
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Infrastructure\bin\Debug\net10.0\ImovelRadar.Domain.dll
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Infrastructure\bin\Debug\net10.0\ImovelRadar.Domain.pdb
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Infrastructure\bin\Debug\net10.0\ImovelRadar.Application.pdb
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Infrastructure\obj\Debug\net10.0\ImovelRadar.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Infrastructure\obj\Debug\net10.0\ImovelRadar.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Infrastructure\obj\Debug\net10.0\ImovelRadar.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Infrastructure\obj\Debug\net10.0\ImovelRadar.Infrastructure.AssemblyInfo.cs
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Infrastructure\obj\Debug\net10.0\ImovelRadar.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Infrastructure\obj\Debug\net10.0\ImovelRa.2CC9DCBE.Up2Date
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Infrastructure\obj\Debug\net10.0\ImovelRadar.Infrastructure.dll
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Infrastructure\obj\Debug\net10.0\refint\ImovelRadar.Infrastructure.dll
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Infrastructure\obj\Debug\net10.0\ImovelRadar.Infrastructure.pdb
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Infrastructure\obj\Debug\net10.0\ref\ImovelRadar.Infrastructure.dll

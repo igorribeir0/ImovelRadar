@@ -1,0 +1,11 @@
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Domain\bin\Debug\net10.0\ImovelRadar.Domain.deps.json
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Domain\bin\Debug\net10.0\ImovelRadar.Domain.dll
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Domain\bin\Debug\net10.0\ImovelRadar.Domain.pdb
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Domain\obj\Debug\net10.0\ImovelRadar.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Domain\obj\Debug\net10.0\ImovelRadar.Domain.AssemblyInfoInputs.cache
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Domain\obj\Debug\net10.0\ImovelRadar.Domain.AssemblyInfo.cs
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Domain\obj\Debug\net10.0\ImovelRadar.Domain.csproj.CoreCompileInputs.cache
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Domain\obj\Debug\net10.0\ImovelRadar.Domain.dll
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Domain\obj\Debug\net10.0\refint\ImovelRadar.Domain.dll
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Domain\obj\Debug\net10.0\ImovelRadar.Domain.pdb
+C:\Users\POLO\Desktop\Igor\ImovelRadar\src\ImovelRadar.Domain\obj\Debug\net10.0\ref\ImovelRadar.Domain.dll

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "rrfBUKSZa9U=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\POLO\\Desktop\\Igor\\ImovelRadar\\src\\ImovelRadar.Api\\ImovelRadar.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\POLO\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.12\\microsoft.aspnetcore.openapi.10.0.12.nupkg.sha512",
+    "C:\\Users\\POLO\\.nuget\\packages\\microsoft.openapi\\2.12.0\\microsoft.openapi.2.12.0.nupkg.sha512"
+  ],
+  "logs": []
+}
